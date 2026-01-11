@@ -99,7 +99,7 @@ Set the judge model via environment variable:
 ```bash
 export GOOGLE_API_KEY="your-api-key"
 export JUDGE_MODEL="gemini-3-flash-preview"  # Default (fast, cost-effective)
-export JUDGE_MODEL="gemini-2.5-pro"          # For higher quality judging
+export JUDGE_MODEL="gemini-3-pro-preview"    # For higher quality judging
 ```
 
 ## License
