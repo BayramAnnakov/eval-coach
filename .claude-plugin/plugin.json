@@ -1,0 +1,8 @@
+{
+  "name": "eval-coach",
+  "version": "1.2.0",
+  "description": "AI evaluation strategy design assistant using Evaluation-Driven Development (EDD)",
+  "author": "Bayram Annakov",
+  "repository": "https://github.com/BayramAnnakov/eval-coach",
+  "skills": ["SKILL.md"]
+}
