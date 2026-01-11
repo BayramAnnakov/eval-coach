@@ -109,5 +109,7 @@ MIT License - see [LICENSE](LICENSE)
 ## Related Resources
 
 - [LangSmith Evaluation Guide](https://docs.smith.langchain.com/evaluation)
-- [Anthropic Evaluation Best Practices](https://docs.anthropic.com/claude/docs/testing-and-evaluation)
+- [Anthropic: Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
+- [Claude Console Evaluation Tool](https://docs.claude.com/en/docs/test-and-evaluate/eval-tool)
+- [Anthropic Cookbook: Building Evals](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/building_evals.ipynb)
 - [Agent Skills Specification](https://agentskills.io/specification)
