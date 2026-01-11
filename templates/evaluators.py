@@ -8,17 +8,16 @@ Evaluator Types:
 - Human-in-Loop (Tier 3): Flag for review, $5-50/run
 
 Configuration:
-- Set JUDGE_MODEL env var to customize LLM judge (default: gpt-4o-mini)
+- Set JUDGE_MODEL env var to customize LLM judge (default: gemini-3-flash-preview)
 """
 
 import json
 import os
-from datetime import datetime
 from langsmith.schemas import Run, Example
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 # Configurable judge model - set JUDGE_MODEL env var to override
-JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gpt-4o-mini")
+JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gemini-3-flash-preview")
 
 
 # === TIER 1: AUTOMATED EVALUATORS ===
@@ -186,7 +185,7 @@ Return JSON: {{"score": 1-5, "reasoning": "brief explanation"}}
 """
 
     try:
-        llm = ChatOpenAI(model=JUDGE_MODEL, temperature=0)
+        llm = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0)
         result = llm.invoke(judge_prompt)
         parsed = json.loads(result.content)
 
@@ -227,7 +226,7 @@ Return JSON: {{"score": 1-5, "reasoning": "brief explanation"}}
 """
 
     try:
-        llm = ChatOpenAI(model=JUDGE_MODEL, temperature=0)
+        llm = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0)
         result = llm.invoke(judge_prompt)
         parsed = json.loads(result.content)
 
@@ -286,7 +285,7 @@ Return JSON: {{"score": 0.0-1.0, "mismatch_found": true/false, "reasoning": "exp
 """
 
     try:
-        llm = ChatOpenAI(model=JUDGE_MODEL, temperature=0)
+        llm = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0)
         response = llm.invoke(judge_prompt)
         result = json.loads(response.content)
         return {

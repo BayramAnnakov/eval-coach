@@ -25,14 +25,14 @@ Eval Coach guides you through a structured 5-step framework for evaluating LLM a
 Copy this skill to your project's skills directory:
 
 ```bash
-git clone https://github.com/bayramannakov/eval-coach-skill.git ~/.claude/skills/eval-coach
+git clone https://github.com/BayramAnnakov/eval-coach.git ~/.claude/skills/eval-coach
 ```
 
 Or add to your project:
 
 ```bash
 mkdir -p skills
-git clone https://github.com/bayramannakov/eval-coach-skill.git skills/eval-coach
+git clone https://github.com/BayramAnnakov/eval-coach.git skills/eval-coach
 ```
 
 ### Usage
@@ -86,10 +86,10 @@ This skill follows the [Agent Skills](https://agentskills.io) open standard (SKI
 For the templates:
 - Python 3.9+
 - LangSmith account (for dataset management)
-- OpenAI API key (for LLM-as-Judge evaluators)
+- Google API key (for LLM-as-Judge evaluators)
 
 ```bash
-pip install langsmith langchain-openai
+pip install langsmith langchain-google-genai
 ```
 
 ## Configuration
@@ -97,8 +97,9 @@ pip install langsmith langchain-openai
 Set the judge model via environment variable:
 
 ```bash
-export JUDGE_MODEL="gpt-4o-mini"  # Default
-export JUDGE_MODEL="gpt-4o"      # For higher quality judging
+export GOOGLE_API_KEY="your-api-key"
+export JUDGE_MODEL="gemini-3-flash-preview"  # Default (fast, cost-effective)
+export JUDGE_MODEL="gemini-2.5-pro"          # For higher quality judging
 ```
 
 ## License
